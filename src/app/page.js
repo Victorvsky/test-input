@@ -216,6 +216,7 @@ function InputEmoji(props, ref) {
      * @param {string} html
      */
     function appendContent(html) {
+        //this is the magic
         if (
             typeof maxLength !== "undefined" &&
             textInputRef.current !== null &&
@@ -245,12 +246,6 @@ function InputEmoji(props, ref) {
 
     return (
         <div className="react-emoji">
-            <MentionWrapper
-                searchMention={searchMention}
-                addEventListener={addEventListener}
-                appendContent={appendContent}
-                addSanitizeFn={addSanitizeFn}
-            />
             <TextInput
                 ref={textInputRef}
                 onCopy={handleCopy}
