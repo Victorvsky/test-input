@@ -25,3 +25,256 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+.react-input-emoji--container {
+  color: #4b4b4b;
+  text-rendering: optimizeLegibility;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 21px;
+  margin: 5px 10px;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 20px;
+  min-height: 20px;
+  min-width: 0;
+  outline: none;
+  width: inherit;
+  will-change: width;
+  vertical-align: baseline;
+  border: 1px solid #eaeaea;
+  margin-right: 0;
+}
+
+.react-input-emoji--wrapper {
+  display: flex;
+  overflow: hidden;
+  flex: 1;
+  position: relative;
+  padding-right: 0;
+  vertical-align: baseline;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.react-input-emoji--input {
+  font-weight: 400;
+  max-height: 100px;
+  min-height: 20px;
+  outline: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  z-index: 1;
+  width: 100%;
+  user-select: text;
+  padding: 9px 12px 11px;
+  text-align: left;
+}
+
+.react-input-emoji--input img {
+  vertical-align: middle;
+  width: 18px !important;
+  height: 18px !important;
+  display: inline !important;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.react-input-emoji--overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+
+.react-input-emoji--placeholder {
+  color: #a0a0a0;
+  pointer-events: none;
+  position: absolute;
+  user-select: none;
+  z-index: 2;
+  left: 16px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  width: calc(100% - 22px);
+}
+
+.react-input-emoji--button {
+  position: relative;
+  display: block;
+  text-align: center;
+  padding: 0 10px;
+  overflow: hidden;
+  transition: color 0.1s ease-out;
+  margin: 0;
+  box-shadow: none;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.react-input-emoji--button svg {
+  fill: #858585;
+}
+
+.react-input-emoji--button__show svg {
+  fill: #128b7e;
+}
+
+.react-emoji {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
+.react-emoji-picker--container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.react-emoji-picker--wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 435px;
+  width: 352px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.react-emoji-picker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: slidein 0.1s ease-in-out;
+}
+
+.react-emoji-picker__show {
+  top: 0;
+}
+
+.react-input-emoji--mention--container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.react-input-emoji--mention--list {
+  background-color: #fafafa;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+.react-input-emoji--mention--item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 10px;
+  background-color: transparent;
+  width: 100%;
+  margin: 0;
+  border: 0;
+}
+
+.react-input-emoji--mention--item__selected {
+  background-color: #eeeeee;
+}
+
+.react-input-emoji--mention--item--img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.react-input-emoji--mention--item--name {
+  font-size: 16px;
+  color: #333;
+}
+
+.react-input-emoji--mention--item--name__selected {
+  color: green;
+}
+
+.react-input-emoji--mention--text {
+  color: #039be5;
+}
+
+.react-input-emoji--mention--loading {
+  background-color: #fafafa;
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.react-input-emoji--mention--loading--spinner,
+.react-input-emoji--mention--loading--spinner::after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+
+.react-input-emoji--mention--loading--spinner {
+  margin: 1px auto;
+  font-size: 2px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(0, 0, 0, 0.1);
+  border-right: 1.1em solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1.1em solid rgba(0, 0, 0, 0.1);
+  border-left: 1.1em solid rgba(0, 0, 0, 0.4);
+  transform: translateZ(0);
+  animation: load8 1.1s infinite linear;
+}
+
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
